@@ -14,6 +14,14 @@
 		4202D4CE2C4A485100223356 /* GoRacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4CD2C4A485100223356 /* GoRacesTests.swift */; };
 		4202D4D82C4A485100223356 /* GoRacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4D72C4A485100223356 /* GoRacesUITests.swift */; };
 		4202D4DA2C4A485100223356 /* GoRacesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4D92C4A485100223356 /* GoRacesUITestsLaunchTests.swift */; };
+		4202D4E82C4A591500223356 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 4202D4E72C4A591500223356 /* Swinject */; };
+		4202D4EC2C4A5C1900223356 /* RaceQueryServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4EB2C4A5C1900223356 /* RaceQueryServiceProtocol.swift */; };
+		4202D4F02C4A65DD00223356 /* RacesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4EF2C4A65DD00223356 /* RacesDTO.swift */; };
+		4202D4F22C4A683200223356 /* RaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4F12C4A683200223356 /* RaceModel.swift */; };
+		4202D4F42C4A68A000223356 /* RaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4F32C4A68A000223356 /* RaceType.swift */; };
+		4202D4F72C4A6C4C00223356 /* RaceModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4F62C4A6C4C00223356 /* RaceModelTests.swift */; };
+		4202D4F92C4A740B00223356 /* RaceQueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4F82C4A740B00223356 /* RaceQueryService.swift */; };
+		4202D4FB2C4A75B300223356 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4FA2C4A75B300223356 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,13 @@
 		4202D4D32C4A485100223356 /* GoRacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoRacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4202D4D72C4A485100223356 /* GoRacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRacesUITests.swift; sourceTree = "<group>"; };
 		4202D4D92C4A485100223356 /* GoRacesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRacesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4202D4EB2C4A5C1900223356 /* RaceQueryServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceQueryServiceProtocol.swift; sourceTree = "<group>"; };
+		4202D4EF2C4A65DD00223356 /* RacesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesDTO.swift; sourceTree = "<group>"; };
+		4202D4F12C4A683200223356 /* RaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceModel.swift; sourceTree = "<group>"; };
+		4202D4F32C4A68A000223356 /* RaceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceType.swift; sourceTree = "<group>"; };
+		4202D4F62C4A6C4C00223356 /* RaceModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceModelTests.swift; sourceTree = "<group>"; };
+		4202D4F82C4A740B00223356 /* RaceQueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceQueryService.swift; sourceTree = "<group>"; };
+		4202D4FA2C4A75B300223356 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4202D4E82C4A591500223356 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +110,8 @@
 		4202D4BB2C4A485000223356 /* GoRaces */ = {
 			isa = PBXGroup;
 			children = (
+				4202D4ED2C4A5D3B00223356 /* Models */,
+				4202D4E92C4A5AD000223356 /* Services */,
 				4202D4BC2C4A485000223356 /* GoRacesApp.swift */,
 				4202D4BE2C4A485000223356 /* ContentView.swift */,
 				4202D4C02C4A485100223356 /* Assets.xcassets */,
@@ -113,6 +131,7 @@
 		4202D4CC2C4A485100223356 /* GoRacesTests */ = {
 			isa = PBXGroup;
 			children = (
+				4202D4F52C4A6C2600223356 /* Models */,
 				4202D4CD2C4A485100223356 /* GoRacesTests.swift */,
 			);
 			path = GoRacesTests;
@@ -125,6 +144,50 @@
 				4202D4D92C4A485100223356 /* GoRacesUITestsLaunchTests.swift */,
 			);
 			path = GoRacesUITests;
+			sourceTree = "<group>";
+		};
+		4202D4E92C4A5AD000223356 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4202D4EA2C4A5B1800223356 /* Protocols */,
+				4202D4F82C4A740B00223356 /* RaceQueryService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4202D4EA2C4A5B1800223356 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4202D4EB2C4A5C1900223356 /* RaceQueryServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4202D4ED2C4A5D3B00223356 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4202D4EE2C4A65C600223356 /* DTO */,
+				4202D4F12C4A683200223356 /* RaceModel.swift */,
+				4202D4F32C4A68A000223356 /* RaceType.swift */,
+				4202D4FA2C4A75B300223356 /* NetworkError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4202D4EE2C4A65C600223356 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				4202D4EF2C4A65DD00223356 /* RacesDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		4202D4F52C4A6C2600223356 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4202D4F62C4A6C4C00223356 /* RaceModelTests.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +206,9 @@
 			dependencies = (
 			);
 			name = GoRaces;
+			packageProductDependencies = (
+				4202D4E72C4A591500223356 /* Swinject */,
+			);
 			productName = GoRaces;
 			productReference = 4202D4B92C4A485000223356 /* GoRaces.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +281,9 @@
 				Base,
 			);
 			mainGroup = 4202D4B02C4A485000223356;
+			packageReferences = (
+				4202D4E62C4A591500223356 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = 4202D4BA2C4A485000223356 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +326,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4202D4F42C4A68A000223356 /* RaceType.swift in Sources */,
+				4202D4FB2C4A75B300223356 /* NetworkError.swift in Sources */,
+				4202D4F92C4A740B00223356 /* RaceQueryService.swift in Sources */,
 				4202D4BF2C4A485000223356 /* ContentView.swift in Sources */,
+				4202D4EC2C4A5C1900223356 /* RaceQueryServiceProtocol.swift in Sources */,
+				4202D4F02C4A65DD00223356 /* RacesDTO.swift in Sources */,
+				4202D4F22C4A683200223356 /* RaceModel.swift in Sources */,
 				4202D4BD2C4A485000223356 /* GoRacesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4202D4F72C4A6C4C00223356 /* RaceModelTests.swift in Sources */,
 				4202D4CE2C4A485100223356 /* GoRacesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +501,7 @@
 				DEVELOPMENT_TEAM = TQDS6MDQ3F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -455,6 +532,7 @@
 				DEVELOPMENT_TEAM = TQDS6MDQ3F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -483,7 +561,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TQDS6MDQ3F;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igorelik.GoRacesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -503,7 +581,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TQDS6MDQ3F;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igorelik.GoRacesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -590,6 +668,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4202D4E62C4A591500223356 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4202D4E72C4A591500223356 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4202D4E62C4A591500223356 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4202D4B12C4A485000223356 /* Project object */;
 }
