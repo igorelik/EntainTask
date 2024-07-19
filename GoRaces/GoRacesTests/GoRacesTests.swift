@@ -1,10 +1,3 @@
-//
-//  GoRacesTests.swift
-//  GoRacesTests
-//
-//  Created by Igor Gorelik on 19/7/2024.
-//
-
 import XCTest
 @testable import GoRaces
 
