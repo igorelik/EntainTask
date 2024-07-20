@@ -89,5 +89,41 @@ final class RaceModelTests: XCTestCase {
         XCTAssertEqual(raceModel.raceType, .other)
         XCTAssertEqual(raceModel.raceName, "1")
     }
+    
+    func testGivenRaceStartsIn60sec_WhenCheckingTime_ThenIntervalIsGeneratedCorrectly() {
+        // Arrange
+        let raceSummary = generateRaceSummary(61, RaceType.greyhound.rawValue)
+        let raceModel = RaceModel(raceSummary: raceSummary)
+        
+        // Act
+        let actual = raceModel.intervalTill(time: Date(timeIntervalSince1970: 1721374861))
+        
+        // Assert
+        XCTAssertEqual(actual, "01:00")
+    }
+
+    func testGivenRaceStarted60secAgo_WhenCheckingTime_ThenIntervalIsGeneratedCorrectly() {
+        // Arrange
+        let raceSummary = generateRaceSummary(-59, RaceType.greyhound.rawValue)
+        let raceModel = RaceModel(raceSummary: raceSummary)
+        
+        // Act
+        let actual = raceModel.intervalTill(time: Date(timeIntervalSince1970: 1721374861))
+        
+        // Assert
+        XCTAssertEqual(actual, "-01:00")
+    }
+
+    func testGivenRaceStarted30SecAgo_WhenCheckingTime_ThenIntervalIsGeneratedCorrectly() {
+        // Arrange
+        let raceSummary = generateRaceSummary(-29, RaceType.greyhound.rawValue)
+        let raceModel = RaceModel(raceSummary: raceSummary)
+        
+        // Act
+        let actual = raceModel.intervalTill(time: Date(timeIntervalSince1970: 1721374861))
+        
+        // Assert
+        XCTAssertEqual(actual, "-00:30")
+    }
 
 }

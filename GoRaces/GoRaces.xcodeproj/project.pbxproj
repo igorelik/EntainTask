@@ -28,6 +28,8 @@
 		4202D5052C4B5ADD00223356 /* RacesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D5042C4B5ADD00223356 /* RacesListViewModel.swift */; };
 		4202D5072C4B5AEC00223356 /* RacesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D5062C4B5AEC00223356 /* RacesListView.swift */; };
 		4202D5092C4B5BE800223356 /* FeaturesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D5082C4B5BE800223356 /* FeaturesAssembly.swift */; };
+		4202D50C2C4B80F100223356 /* RaceQueryServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D50B2C4B80F100223356 /* RaceQueryServiceMock.swift */; };
+		4202D50E2C4B861600223356 /* RaceType+icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D50D2C4B861600223356 /* RaceType+icon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		4202D5042C4B5ADD00223356 /* RacesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesListViewModel.swift; sourceTree = "<group>"; };
 		4202D5062C4B5AEC00223356 /* RacesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesListView.swift; sourceTree = "<group>"; };
 		4202D5082C4B5BE800223356 /* FeaturesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesAssembly.swift; sourceTree = "<group>"; };
+		4202D50B2C4B80F100223356 /* RaceQueryServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceQueryServiceMock.swift; sourceTree = "<group>"; };
+		4202D50D2C4B861600223356 /* RaceType+icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RaceType+icon.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +129,8 @@
 				4202D5022C4B5AA200223356 /* Features */,
 				4202D4ED2C4A5D3B00223356 /* Models */,
 				4202D4E92C4A5AD000223356 /* Services */,
-				4202D5002C4B58E200223356 /* DIResolver.swift */,
 				4202D4FE2C4B57FF00223356 /* ApplicationAssembly.swift */,
+				4202D5002C4B58E200223356 /* DIResolver.swift */,
 				4202D4BC2C4A485000223356 /* GoRacesApp.swift */,
 				4202D4BE2C4A485000223356 /* ContentView.swift */,
 				4202D4C02C4A485100223356 /* Assets.xcassets */,
@@ -164,6 +168,7 @@
 		4202D4E92C4A5AD000223356 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4202D50A2C4B80C700223356 /* Mocks */,
 				4202D4EA2C4A5B1800223356 /* Protocols */,
 				4202D4F82C4A740B00223356 /* RaceQueryService.swift */,
 				4202D4FC2C4B56F000223356 /* ServicesAssembly.swift */,
@@ -220,8 +225,17 @@
 			children = (
 				4202D5042C4B5ADD00223356 /* RacesListViewModel.swift */,
 				4202D5062C4B5AEC00223356 /* RacesListView.swift */,
+				4202D50D2C4B861600223356 /* RaceType+icon.swift */,
 			);
 			path = RacesList;
+			sourceTree = "<group>";
+		};
+		4202D50A2C4B80C700223356 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				4202D50B2C4B80F100223356 /* RaceQueryServiceMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,12 +382,14 @@
 				4202D4EC2C4A5C1900223356 /* RaceQueryServiceProtocol.swift in Sources */,
 				4202D5092C4B5BE800223356 /* FeaturesAssembly.swift in Sources */,
 				4202D5052C4B5ADD00223356 /* RacesListViewModel.swift in Sources */,
+				4202D50C2C4B80F100223356 /* RaceQueryServiceMock.swift in Sources */,
 				4202D4F02C4A65DD00223356 /* RacesDTO.swift in Sources */,
 				4202D4FF2C4B57FF00223356 /* ApplicationAssembly.swift in Sources */,
 				4202D4F22C4A683200223356 /* RaceModel.swift in Sources */,
 				4202D5012C4B58E200223356 /* DIResolver.swift in Sources */,
 				4202D4FD2C4B56F000223356 /* ServicesAssembly.swift in Sources */,
 				4202D4BD2C4A485000223356 /* GoRacesApp.swift in Sources */,
+				4202D50E2C4B861600223356 /* RaceType+icon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
