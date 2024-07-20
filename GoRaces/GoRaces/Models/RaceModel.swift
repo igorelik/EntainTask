@@ -1,6 +1,7 @@
 import Foundation
 
 public struct RaceModel {
+    
     let raceID: String
     let raceName: String
     let raceNumber: Int

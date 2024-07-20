@@ -1,17 +1,20 @@
-//
-//  GoRacesApp.swift
-//  GoRaces
-//
-//  Created by Igor Gorelik on 19/7/2024.
-//
-
 import SwiftUI
+import Swinject
 
 @main
 struct GoRacesApp: App {
+//    let diResolver: DIResolver
+//    
+    init() {
+        let diContainer = Container()
+        ApplicationAssembly.assemble(into: diContainer)
+//        diResolver = DIResolver(diContainer: diContainer)
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RacesListView()
+//                .environmentObject(diResolver)
         }
     }
 }

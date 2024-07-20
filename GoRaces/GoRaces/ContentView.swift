@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  GoRaces
-//
-//  Created by Igor Gorelik on 19/7/2024.
-//
-
 import SwiftUI
 
 struct ContentView: View {

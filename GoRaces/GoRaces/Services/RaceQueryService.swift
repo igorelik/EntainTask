@@ -12,7 +12,6 @@ public class RaceQueryService: RaceQueryServiceProtocol {
                     throw NetworkError.apiError(statusCode: response.statusCode)
                 }
             }
-            
             throw NetworkError.transportError(String.init(data: data, encoding: .utf8))
             
         } catch let error as NetworkError {
@@ -24,12 +23,13 @@ public class RaceQueryService: RaceQueryServiceProtocol {
     
     public func filterRaces(races: [RaceModel], raceTypes: [RaceType], max: Int) -> [RaceModel] {
         let relevantRaces = races.filter{ $0.raceType != .other }
+            .filter { $0.advertisedStartTime.timeIntervalSince(Date.now) > -60 }
         if raceTypes.isEmpty {
             // return all relevant races
             return relevantRaces
         }
         // filter by selected race types
-        return races.filter { race in
+        return relevantRaces.filter { race in
             raceTypes.contains(where: { rt in
                 rt == race.raceType
             })
@@ -38,7 +38,7 @@ public class RaceQueryService: RaceQueryServiceProtocol {
     
     public func getRaces(for raceTypes: [RaceType], max: Int) async throws -> [RaceModel] {
         // TODO: refactor to use config to build URL
-        let url = "https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=50"
+        let url = "https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=\(max*RaceType.allCases.count*3)"
         let data = try await fetchData(RacesDTO.self, for: URLRequest(url: URL(string: url)!))
         return filterRaces(races: data.data.raceSummaries.values
             .compactMap{ RaceModel(raceSummary: $0) }, raceTypes: raceTypes, max: max)

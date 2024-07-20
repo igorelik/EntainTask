@@ -37,3 +37,8 @@ for key files.
 - Horse racing: category_id: 4a2788f8-e825-4d36-9894-efd4baf1cfae
 GET https://api.neds.com.au/rest/v1/racing/?method=nextraces&amp;count=10
 Content-type: application/json
+
+## Notes
+- As discussed during our technical discussion, the minimum version is set to iOS 15 (iOS 15.5 to be precise)
+- there's no way to filter categories returned from the API. That's why the count has been increased to increase the chance we have 5 races per our categories of interests
+- For the same reason, filtering by categories is performed on the UI layer and not at the service layer
