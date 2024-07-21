@@ -15,6 +15,7 @@ struct RacesListView: View {
                     .padding()
                     .frame(maxHeight: 100)
                     .padding(.top)
+                    .accessibilityLabel("Neds logo")
             }
                 .frame(maxWidth: .infinity)
                 .background(Color.nedsBg)
@@ -73,10 +74,13 @@ struct SingleRaceView: View {
                         .bold()
                         .font(.title3)
                         .foregroundStyle(Color.nedsBg)
+                        .accessibilityLabel("\(race.raceModel.raceType.title) race \(race.raceModel.meetingName). Race \(race.raceModel.raceNumber)")
                     Text("Race: \(race.raceModel.raceNumber)")
+                        .accessibilityHidden(true)
                 }
                 Spacer()
                 Text(race.intervalDescription)
+                    .accessibilityLabel(race.intervalAccessibleDescription)
             }
             Divider()
         }

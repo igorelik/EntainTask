@@ -3,11 +3,13 @@ import Foundation
 class RacesListViewModel: ObservableObject {
     class RaceModelWrapper: ObservableObject {
         let raceModel: RaceModel
-        @Published var intervalDescription: String
+        let intervalDescription: String
+        let intervalAccessibleDescription: String
         
         init(raceModel: RaceModel) {
             self.raceModel = raceModel
             self.intervalDescription = raceModel.intervalTill(time: Date.now)
+            self.intervalAccessibleDescription = raceModel.acessibilityIntervalDescription(time: Date.now)
         }
     }
     

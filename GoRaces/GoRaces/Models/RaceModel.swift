@@ -17,6 +17,17 @@ public struct RaceModel {
         return "\(raceNotStarted ? "" : "-")\(String(format: "%02d", minutes)):\(String(format: "%02d", seconds))"
     }
     
+    func acessibilityIntervalDescription( time: Date) -> String {
+        let secondsInterval = advertisedStartTime.timeIntervalSince1970 - time.timeIntervalSince1970
+        let raceNotStarted = secondsInterval > 0
+        let minutes = Int((secondsInterval.magnitude / 60).rounded(.down))
+        let seconds = Int(secondsInterval.magnitude.truncatingRemainder(dividingBy: 60).magnitude)
+        if raceNotStarted {
+            return "starts in \(minutes >= 1 ? "\(minutes) minutes and " : "") \(seconds) seconds"
+        }
+        return "started  \(minutes >= 1 ? "\(minutes) minutes and " : "") \(seconds) seconds ago"
+    }
+    
     init(raceID: String, raceName: String, raceNumber: Int, raceType: RaceType, meetingName: String, advertisedStartTime: Date) {
         self.raceID = raceID
         self.raceName = raceName
