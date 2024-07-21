@@ -25,11 +25,11 @@ class RacesListViewModel: ObservableObject {
     @MainActor
     func refreshRaces() async {
         do {
-            raceModels = (try await _raceQueryService.getRaces(for: selectedRaceTypes, max: 5))
+            raceModels = (try await _raceQueryService.getRaces(for: [], max: -1))
                 .sorted(by: { r1, r2 in
                     r1.advertisedStartTime < r2.advertisedStartTime
                 })
-            races = raceModels.map{ RaceModelWrapper(raceModel: $0) }
+            refreshTimeStamp()
             if races.isEmpty {
                 errorMessage = "No races available"
             }
