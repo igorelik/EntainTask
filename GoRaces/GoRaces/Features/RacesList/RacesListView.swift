@@ -2,11 +2,27 @@ import SwiftUI
 
 struct RacesListView: View {
     @StateObject var viewModel: RacesListViewModel = ApplicationAssembly.resolver.resolve(RacesListViewModel.self)
+    @State var isFilterViewPresented = false
     private let timeStampTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let refreshTimer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
 
     var body: some View {
         ScrollView {
+            ZStack {
+                Image(.nedsLogo)
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
+                    .frame(maxHeight: 100)
+                    .padding(.top)
+            }
+                .frame(maxWidth: .infinity)
+                .background(Color.nedsBg)
+            if !viewModel.errorMessage.isEmpty {
+                Text(viewModel.errorMessage)
+                    .foregroundStyle(Color.nedsBg)
+                    .font(.title3)
+            }
             LazyVStack (alignment: .leading) {
                 ForEach(viewModel.races, id: \.raceModel.raceID) { raceModel in
                     SingleRaceView(race: raceModel)
@@ -14,19 +30,36 @@ struct RacesListView: View {
             }
             .padding()
         }
-        .onAppear() {
-            Task {
-                await viewModel.refreshRaces()
-            }
+        .task {
+            await viewModel.refreshRaces()
         }
         .onReceive(timeStampTimer) { _ in
-            viewModel.refreshTimeStamp()
+            withAnimation {            viewModel.refreshTimeStamp()
+            }
         }
         .onReceive(refreshTimer) { _ in
             Task {
                 await viewModel.refreshRaces()
             }
         }
+        .sheet(isPresented: $isFilterViewPresented, onDismiss: {
+            withAnimation {            viewModel.refreshTimeStamp()
+            }
+        })  {
+            if #available(iOS 16.0, *) {
+                RaceFilterView(raceTypes: $viewModel.selectedRaceTypes)
+                    .presentationDetents([.medium])
+                    .presentationDragIndicator(.visible)
+            } else {
+                RaceFilterView(raceTypes: $viewModel.selectedRaceTypes)
+            }
+        }
+        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        .navigationBarItems(trailing: Button(action: {
+            isFilterViewPresented = true
+        }, label: {
+            Image(systemName: "line.3.horizontal.decrease.circle")
+        }))
     }
 }
 
@@ -39,6 +72,7 @@ struct SingleRaceView: View {
                     (Text(race.raceModel.raceType.icon) +  Text(" \(race.raceModel.meetingName)"))
                         .bold()
                         .font(.title3)
+                        .foregroundStyle(Color.nedsBg)
                     Text("Race: \(race.raceModel.raceNumber)")
                 }
                 Spacer()
@@ -47,6 +81,51 @@ struct SingleRaceView: View {
             Divider()
         }
         .padding(.vertical, 2)
+    }
+}
+
+struct RaceFilterView: View {
+    @Binding var raceTypes: [RaceType]
+    @State var raceSelection: [Bool]
+    @Environment(\.dismiss) var dismiss
+    
+    let relevantRaceTypes = RaceType.allCases.filter { $0 != .other }
+    
+    init(raceTypes: Binding<[RaceType]>) {
+        self._raceTypes = raceTypes
+        self._raceSelection = State(initialValue: relevantRaceTypes.map({ rt in
+            raceTypes.wrappedValue.contains { selectedRT in
+                selectedRT == rt
+            }
+        }))
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Filter")
+                .font(.title2)
+                .frame(maxWidth: .infinity)
+            ForEach(0..<raceSelection.count) { index in
+                Toggle(isOn: $raceSelection[index], label: {
+                    Text(relevantRaceTypes[index].icon) + Text("  \(relevantRaceTypes[index].title)")
+                })
+            }
+            Spacer()
+            Button {
+                raceTypes.removeAll()
+                for index in 0..<relevantRaceTypes.count {
+                    if raceSelection[index] {
+                        raceTypes.append(relevantRaceTypes[index])
+                    }
+                }
+                dismiss()
+            } label: {
+                Text("Apply")
+            }
+            .frame(maxWidth: .infinity)
+
+        }
+        .padding()
     }
 }
 
@@ -73,5 +152,11 @@ struct SingleRaceView: View {
         let service = RaceQueryServiceMock(races: races)
         return RacesListViewModel(_raceQueryService: service)
     }
-    return RacesListView(viewModel: getViewModel())
+    return NavigationView {
+        RacesListView(viewModel: getViewModel())
+    }
+}
+
+#Preview {
+    RaceFilterView(raceTypes: Binding.constant([RaceType.greyhound, RaceType.harness]))
 }

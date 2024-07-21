@@ -54,11 +54,11 @@ struct RaceForm: Codable {
     let distance: Int
     let distanceType: DistanceType
     let distanceTypeID: String
-    let trackCondition: DistanceType
-    let trackConditionID: String
+    let trackCondition: DistanceType?
+    let trackConditionID: String?
     let weather: DistanceType?
     let weatherID: String?
-    let raceComment, additionalData: String
+    let raceComment, additionalData: String?
     let generated: Int
     let silkBaseURL: String?
     let raceCommentAlternative: String?

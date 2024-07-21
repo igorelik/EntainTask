@@ -3,18 +3,17 @@ import Swinject
 
 @main
 struct GoRacesApp: App {
-//    let diResolver: DIResolver
-//    
     init() {
         let diContainer = Container()
         ApplicationAssembly.assemble(into: diContainer)
-//        diResolver = DIResolver(diContainer: diContainer)
     }
     
     var body: some Scene {
         WindowGroup {
-            RacesListView()
-//                .environmentObject(diResolver)
+            // TODO: replace with NavigationStack when iOS 15 support can be dropped
+            NavigationView {
+                RacesListView()
+            }
         }
     }
 }
