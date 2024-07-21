@@ -30,6 +30,9 @@ class RacesListViewModel: ObservableObject {
                     r1.advertisedStartTime < r2.advertisedStartTime
                 })
             races = raceModels.map{ RaceModelWrapper(raceModel: $0) }
+            if races.isEmpty {
+                errorMessage = "No races available"
+            }
         } catch {
             errorMessage = "Error: \(error.localizedDescription)"
         }
