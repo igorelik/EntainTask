@@ -11,9 +11,6 @@
 		4202D4BF2C4A485000223356 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4BE2C4A485000223356 /* ContentView.swift */; };
 		4202D4C12C4A485100223356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4202D4C02C4A485100223356 /* Assets.xcassets */; };
 		4202D4C42C4A485100223356 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4202D4C32C4A485100223356 /* Preview Assets.xcassets */; };
-		4202D4CE2C4A485100223356 /* GoRacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4CD2C4A485100223356 /* GoRacesTests.swift */; };
-		4202D4D82C4A485100223356 /* GoRacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4D72C4A485100223356 /* GoRacesUITests.swift */; };
-		4202D4DA2C4A485100223356 /* GoRacesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4D92C4A485100223356 /* GoRacesUITestsLaunchTests.swift */; };
 		4202D4E82C4A591500223356 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 4202D4E72C4A591500223356 /* Swinject */; };
 		4202D4EC2C4A5C1900223356 /* RaceQueryServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4EB2C4A5C1900223356 /* RaceQueryServiceProtocol.swift */; };
 		4202D4F02C4A65DD00223356 /* RacesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4EF2C4A65DD00223356 /* RacesDTO.swift */; };
@@ -30,6 +27,8 @@
 		4202D5092C4B5BE800223356 /* FeaturesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D5082C4B5BE800223356 /* FeaturesAssembly.swift */; };
 		4202D50C2C4B80F100223356 /* RaceQueryServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D50B2C4B80F100223356 /* RaceQueryServiceMock.swift */; };
 		4202D50E2C4B861600223356 /* RaceType+icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D50D2C4B861600223356 /* RaceType+icon.swift */; };
+		4202D5102C4CA58500223356 /* RaceFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D50F2C4CA58500223356 /* RaceFilterView.swift */; };
+		4202D5162C4CA6F500223356 /* RaceQueryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D5152C4CA6F500223356 /* RaceQueryServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +55,7 @@
 		4202D4C02C4A485100223356 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4202D4C32C4A485100223356 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4202D4C92C4A485100223356 /* GoRacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoRacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4202D4CD2C4A485100223356 /* GoRacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRacesTests.swift; sourceTree = "<group>"; };
 		4202D4D32C4A485100223356 /* GoRacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoRacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4202D4D72C4A485100223356 /* GoRacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRacesUITests.swift; sourceTree = "<group>"; };
-		4202D4D92C4A485100223356 /* GoRacesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRacesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4202D4EB2C4A5C1900223356 /* RaceQueryServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceQueryServiceProtocol.swift; sourceTree = "<group>"; };
 		4202D4EF2C4A65DD00223356 /* RacesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesDTO.swift; sourceTree = "<group>"; };
 		4202D4F12C4A683200223356 /* RaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceModel.swift; sourceTree = "<group>"; };
@@ -75,6 +71,8 @@
 		4202D5082C4B5BE800223356 /* FeaturesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesAssembly.swift; sourceTree = "<group>"; };
 		4202D50B2C4B80F100223356 /* RaceQueryServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceQueryServiceMock.swift; sourceTree = "<group>"; };
 		4202D50D2C4B861600223356 /* RaceType+icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RaceType+icon.swift"; sourceTree = "<group>"; };
+		4202D50F2C4CA58500223356 /* RaceFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceFilterView.swift; sourceTree = "<group>"; };
+		4202D5152C4CA6F500223356 /* RaceQueryServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceQueryServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 			children = (
 				4202D4BB2C4A485000223356 /* GoRaces */,
 				4202D4CC2C4A485100223356 /* GoRacesTests */,
-				4202D4D62C4A485100223356 /* GoRacesUITests */,
 				4202D4BA2C4A485000223356 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,18 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				4202D4F52C4A6C2600223356 /* Models */,
-				4202D4CD2C4A485100223356 /* GoRacesTests.swift */,
+				4202D5142C4CA6CA00223356 /* Services */,
 			);
 			path = GoRacesTests;
-			sourceTree = "<group>";
-		};
-		4202D4D62C4A485100223356 /* GoRacesUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4202D4D72C4A485100223356 /* GoRacesUITests.swift */,
-				4202D4D92C4A485100223356 /* GoRacesUITestsLaunchTests.swift */,
-			);
-			path = GoRacesUITests;
 			sourceTree = "<group>";
 		};
 		4202D4E92C4A5AD000223356 /* Services */ = {
@@ -226,6 +214,7 @@
 				4202D5042C4B5ADD00223356 /* RacesListViewModel.swift */,
 				4202D5062C4B5AEC00223356 /* RacesListView.swift */,
 				4202D50D2C4B861600223356 /* RaceType+icon.swift */,
+				4202D50F2C4CA58500223356 /* RaceFilterView.swift */,
 			);
 			path = RacesList;
 			sourceTree = "<group>";
@@ -236,6 +225,14 @@
 				4202D50B2C4B80F100223356 /* RaceQueryServiceMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		4202D5142C4CA6CA00223356 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4202D5152C4CA6F500223356 /* RaceQueryServiceTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +381,7 @@
 				4202D5052C4B5ADD00223356 /* RacesListViewModel.swift in Sources */,
 				4202D50C2C4B80F100223356 /* RaceQueryServiceMock.swift in Sources */,
 				4202D4F02C4A65DD00223356 /* RacesDTO.swift in Sources */,
+				4202D5102C4CA58500223356 /* RaceFilterView.swift in Sources */,
 				4202D4FF2C4B57FF00223356 /* ApplicationAssembly.swift in Sources */,
 				4202D4F22C4A683200223356 /* RaceModel.swift in Sources */,
 				4202D5012C4B58E200223356 /* DIResolver.swift in Sources */,
@@ -398,7 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4202D4F72C4A6C4C00223356 /* RaceModelTests.swift in Sources */,
-				4202D4CE2C4A485100223356 /* GoRacesTests.swift in Sources */,
+				4202D5162C4CA6F500223356 /* RaceQueryServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,8 +404,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4202D4D82C4A485100223356 /* GoRacesUITests.swift in Sources */,
-				4202D4DA2C4A485100223356 /* GoRacesUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

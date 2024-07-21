@@ -47,6 +47,4 @@ public class RaceQueryService: RaceQueryServiceProtocol {
         return filterRaces(races: data.data.raceSummaries.values
             .compactMap{ RaceModel(raceSummary: $0) }, raceTypes: raceTypes, max: max)
     }
-    
-    
 }

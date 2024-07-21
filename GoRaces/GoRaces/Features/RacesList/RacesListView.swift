@@ -88,51 +88,6 @@ struct SingleRaceView: View {
     }
 }
 
-struct RaceFilterView: View {
-    @Binding var raceTypes: [RaceType]
-    @State var raceSelection: [Bool]
-    @Environment(\.dismiss) var dismiss
-    
-    let relevantRaceTypes = RaceType.allCases.filter { $0 != .other }
-    
-    init(raceTypes: Binding<[RaceType]>) {
-        self._raceTypes = raceTypes
-        self._raceSelection = State(initialValue: relevantRaceTypes.map({ rt in
-            raceTypes.wrappedValue.contains { selectedRT in
-                selectedRT == rt
-            }
-        }))
-    }
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("Filter")
-                .font(.title2)
-                .frame(maxWidth: .infinity)
-            ForEach(0..<raceSelection.count) { index in
-                Toggle(isOn: $raceSelection[index], label: {
-                    Text(relevantRaceTypes[index].icon) + Text("  \(relevantRaceTypes[index].title)")
-                })
-            }
-            Spacer()
-            Button {
-                raceTypes.removeAll()
-                for index in 0..<relevantRaceTypes.count {
-                    if raceSelection[index] {
-                        raceTypes.append(relevantRaceTypes[index])
-                    }
-                }
-                dismiss()
-            } label: {
-                Text("Apply")
-            }
-            .frame(maxWidth: .infinity)
-
-        }
-        .padding()
-    }
-}
-
 #Preview {
     func generateRaceModel(_ id: Int, raceType: RaceType) -> RaceModel {
         RaceModel(raceID: "\(id)", raceName: "Race \(id)", raceNumber: id, raceType: raceType, meetingName: "Meeting \(id)", advertisedStartTime: Date.now.advanced(by: TimeInterval(100*id)))
@@ -159,8 +114,4 @@ struct RaceFilterView: View {
     return NavigationView {
         RacesListView(viewModel: getViewModel())
     }
-}
-
-#Preview {
-    RaceFilterView(raceTypes: Binding.constant([RaceType.greyhound, RaceType.harness]))
 }
