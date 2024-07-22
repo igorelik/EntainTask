@@ -12,10 +12,6 @@ final class RaceQueryServiceTests: XCTestCase {
         service = RaceQueryService()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testGivenNoFiltersDefinedsAndNegativeMaxSupplied_WhenFiltering_ThanAllRacesAreReturned() {
         // Arrange
         let races = [
@@ -85,5 +81,4 @@ final class RaceQueryServiceTests: XCTestCase {
         XCTAssertTrue(actual.allSatisfy{ $0.raceType == .greyhound  })
         XCTAssertTrue(actual.allSatisfy{ $0.raceID != races.last!.raceID  })
     }
-
 }

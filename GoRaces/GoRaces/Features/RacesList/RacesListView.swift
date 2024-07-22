@@ -44,9 +44,10 @@ struct RacesListView: View {
             }
         }
         .sheet(isPresented: $isFilterViewPresented, onDismiss: {
-            withAnimation {            viewModel.refreshTimeStamp()
+                withAnimation {            viewModel.refreshTimeStamp()
+                }
             }
-        })  {
+        ) {
             if #available(iOS 16.0, *) {
                 RaceFilterView(raceTypes: $viewModel.selectedRaceTypes)
                     .presentationDetents([.medium])
@@ -60,6 +61,7 @@ struct RacesListView: View {
             isFilterViewPresented = true
         }, label: {
             Image(systemName: "line.3.horizontal.decrease.circle")
+                .foregroundStyle(Color.primary)
         }))
     }
 }

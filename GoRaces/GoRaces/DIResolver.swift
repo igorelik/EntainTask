@@ -1,8 +1,10 @@
 import Swinject
 import Combine
 
-// Defined as ObserabeObject so it can be used as an enviromentObject
-class DIResolver: ObservableObject {
+// Number of helper functions here for future use to enable fetures like navigation to a child view
+// i.e. resolve classes with parameters based on the context, 
+// e.g. details page with a detail entity ID as a parameter
+class DIResolver {
     private let diContainer: Container
 
     init(diContainer: Container) {

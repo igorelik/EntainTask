@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4202D4BD2C4A485000223356 /* GoRacesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4BC2C4A485000223356 /* GoRacesApp.swift */; };
-		4202D4BF2C4A485000223356 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D4BE2C4A485000223356 /* ContentView.swift */; };
 		4202D4C12C4A485100223356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4202D4C02C4A485100223356 /* Assets.xcassets */; };
 		4202D4C42C4A485100223356 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4202D4C32C4A485100223356 /* Preview Assets.xcassets */; };
 		4202D4E82C4A591500223356 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 4202D4E72C4A591500223356 /* Swinject */; };
@@ -39,23 +38,14 @@
 			remoteGlobalIDString = 4202D4B82C4A485000223356;
 			remoteInfo = GoRaces;
 		};
-		4202D4D42C4A485100223356 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4202D4B12C4A485000223356 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4202D4B82C4A485000223356;
-			remoteInfo = GoRaces;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4202D4B92C4A485000223356 /* GoRaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoRaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4202D4BC2C4A485000223356 /* GoRacesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRacesApp.swift; sourceTree = "<group>"; };
-		4202D4BE2C4A485000223356 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4202D4C02C4A485100223356 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4202D4C32C4A485100223356 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4202D4C92C4A485100223356 /* GoRacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoRacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4202D4D32C4A485100223356 /* GoRacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoRacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4202D4EB2C4A5C1900223356 /* RaceQueryServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceQueryServiceProtocol.swift; sourceTree = "<group>"; };
 		4202D4EF2C4A65DD00223356 /* RacesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesDTO.swift; sourceTree = "<group>"; };
 		4202D4F12C4A683200223356 /* RaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceModel.swift; sourceTree = "<group>"; };
@@ -91,13 +81,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4202D4D02C4A485100223356 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,7 +98,6 @@
 			children = (
 				4202D4B92C4A485000223356 /* GoRaces.app */,
 				4202D4C92C4A485100223356 /* GoRacesTests.xctest */,
-				4202D4D32C4A485100223356 /* GoRacesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,7 +111,6 @@
 				4202D4FE2C4B57FF00223356 /* ApplicationAssembly.swift */,
 				4202D5002C4B58E200223356 /* DIResolver.swift */,
 				4202D4BC2C4A485000223356 /* GoRacesApp.swift */,
-				4202D4BE2C4A485000223356 /* ContentView.swift */,
 				4202D4C02C4A485100223356 /* Assets.xcassets */,
 				4202D4C22C4A485100223356 /* Preview Content */,
 			);
@@ -276,24 +257,6 @@
 			productReference = 4202D4C92C4A485100223356 /* GoRacesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4202D4D22C4A485100223356 /* GoRacesUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4202D4E32C4A485100223356 /* Build configuration list for PBXNativeTarget "GoRacesUITests" */;
-			buildPhases = (
-				4202D4CF2C4A485100223356 /* Sources */,
-				4202D4D02C4A485100223356 /* Frameworks */,
-				4202D4D12C4A485100223356 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4202D4D52C4A485100223356 /* PBXTargetDependency */,
-			);
-			name = GoRacesUITests;
-			productName = GoRacesUITests;
-			productReference = 4202D4D32C4A485100223356 /* GoRacesUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -308,10 +271,6 @@
 						CreatedOnToolsVersion = 15.4;
 					};
 					4202D4C82C4A485100223356 = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 4202D4B82C4A485000223356;
-					};
-					4202D4D22C4A485100223356 = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 4202D4B82C4A485000223356;
 					};
@@ -335,7 +294,6 @@
 			targets = (
 				4202D4B82C4A485000223356 /* GoRaces */,
 				4202D4C82C4A485100223356 /* GoRacesTests */,
-				4202D4D22C4A485100223356 /* GoRacesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -357,13 +315,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4202D4D12C4A485100223356 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -374,7 +325,6 @@
 				4202D4F42C4A68A000223356 /* RaceType.swift in Sources */,
 				4202D4FB2C4A75B300223356 /* NetworkError.swift in Sources */,
 				4202D4F92C4A740B00223356 /* RaceQueryService.swift in Sources */,
-				4202D4BF2C4A485000223356 /* ContentView.swift in Sources */,
 				4202D5072C4B5AEC00223356 /* RacesListView.swift in Sources */,
 				4202D4EC2C4A5C1900223356 /* RaceQueryServiceProtocol.swift in Sources */,
 				4202D5092C4B5BE800223356 /* FeaturesAssembly.swift in Sources */,
@@ -400,13 +350,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4202D4CF2C4A485100223356 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -414,11 +357,6 @@
 			isa = PBXTargetDependency;
 			target = 4202D4B82C4A485000223356 /* GoRaces */;
 			targetProxy = 4202D4CA2C4A485100223356 /* PBXContainerItemProxy */;
-		};
-		4202D4D52C4A485100223356 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4202D4B82C4A485000223356 /* GoRaces */;
-			targetProxy = 4202D4D42C4A485100223356 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -644,42 +582,6 @@
 			};
 			name = Release;
 		};
-		4202D4E42C4A485100223356 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TQDS6MDQ3F;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.igorelik.GoRacesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GoRaces;
-			};
-			name = Debug;
-		};
-		4202D4E52C4A485100223356 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TQDS6MDQ3F;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.igorelik.GoRacesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GoRaces;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -706,15 +608,6 @@
 			buildConfigurations = (
 				4202D4E12C4A485100223356 /* Debug */,
 				4202D4E22C4A485100223356 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4202D4E32C4A485100223356 /* Build configuration list for PBXNativeTarget "GoRacesUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4202D4E42C4A485100223356 /* Debug */,
-				4202D4E52C4A485100223356 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

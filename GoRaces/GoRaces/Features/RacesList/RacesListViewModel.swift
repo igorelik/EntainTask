@@ -1,7 +1,7 @@
 import Foundation
 
 class RacesListViewModel: ObservableObject {
-    class RaceModelWrapper: ObservableObject {
+    struct RaceModelWrapper {
         let raceModel: RaceModel
         let intervalDescription: String
         let intervalAccessibleDescription: String
@@ -18,7 +18,6 @@ class RacesListViewModel: ObservableObject {
     @Published var races: [RaceModelWrapper] = []
     @Published var selectedRaceTypes: [RaceType] = []
     @Published var errorMessage = ""
-    @Published var updateTrigger = false
     
     init(_raceQueryService: RaceQueryServiceProtocol) {
         self._raceQueryService = _raceQueryService
@@ -28,9 +27,6 @@ class RacesListViewModel: ObservableObject {
     func refreshRaces() async {
         do {
             raceModels = (try await _raceQueryService.getRaces(for: [], max: -1))
-                .sorted(by: { r1, r2 in
-                    r1.advertisedStartTime < r2.advertisedStartTime
-                })
             refreshTimeStamp()
             if races.isEmpty {
                 errorMessage = "No races available"

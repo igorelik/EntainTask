@@ -3,14 +3,6 @@ import XCTest
 
 final class RaceModelTests: XCTestCase {
     
-    func generateDistanceType(_ id: Int) -> DistanceType {
-        DistanceType(id: "\(id)", name: "\(id)", shortName: "SN\(id)", iconURI: "Icon\(id)")
-    }
-    
-    func generateRaceForm(_ id: Int) -> RaceForm {
-        RaceForm(distance: id, distanceType: generateDistanceType(id), distanceTypeID: "\(id)", trackCondition: generateDistanceType(id+1), trackConditionID: "\(id)", weather: nil, weatherID: nil, raceComment: "\(id)", additionalData: "\(id)", generated: id, silkBaseURL: "\(id)", raceCommentAlternative: "\(id)")
-    }
-    
     func generateRaceSummary(_ id: Int, _ raceType: String) -> RaceSummary {
         RaceSummary(raceID: "\(id)",
                     raceName: "\(id)",
@@ -18,12 +10,7 @@ final class RaceModelTests: XCTestCase {
                     meetingID: "\(id)",
                     meetingName: "\(id)",
                     categoryID: raceType,
-                    advertisedStart: AdvertisedStart(seconds: 1721374860 + id),
-                    raceForm: generateRaceForm(id),
-                    venueID: "\(id)",
-                    venueName: "\(id)",
-                    venueState: "\(id)",
-                    venueCountry: "\(id)")
+                    advertisedStart: AdvertisedStart(seconds: 1721374860 + id))
     }
     
     func testGivenGrayhoundRaceSummary_WhenConvertingToRaceModel_ThanConvertedCorrectly() throws {
