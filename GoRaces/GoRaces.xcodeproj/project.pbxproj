@@ -28,6 +28,10 @@
 		4202D50E2C4B861600223356 /* RaceType+icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D50D2C4B861600223356 /* RaceType+icon.swift */; };
 		4202D5102C4CA58500223356 /* RaceFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D50F2C4CA58500223356 /* RaceFilterView.swift */; };
 		4202D5162C4CA6F500223356 /* RaceQueryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D5152C4CA6F500223356 /* RaceQueryServiceTests.swift */; };
+		4202D5192C4DDB3F00223356 /* ConfigurationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D5182C4DDB3F00223356 /* ConfigurationServiceProtocol.swift */; };
+		4202D51B2C4DDBBB00223356 /* ConfigurationServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D51A2C4DDBBB00223356 /* ConfigurationServiceMock.swift */; };
+		4202D51D2C4DDC1000223356 /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D51C2C4DDC1000223356 /* ConfigurationService.swift */; };
+		4202D5222C4DE08A00223356 /* ConfigurationServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202D5212C4DE08A00223356 /* ConfigurationServiceMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,11 @@
 		4202D50D2C4B861600223356 /* RaceType+icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RaceType+icon.swift"; sourceTree = "<group>"; };
 		4202D50F2C4CA58500223356 /* RaceFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceFilterView.swift; sourceTree = "<group>"; };
 		4202D5152C4CA6F500223356 /* RaceQueryServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceQueryServiceTests.swift; sourceTree = "<group>"; };
+		4202D5172C4DDB0100223356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4202D5182C4DDB3F00223356 /* ConfigurationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationServiceProtocol.swift; sourceTree = "<group>"; };
+		4202D51A2C4DDBBB00223356 /* ConfigurationServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationServiceMock.swift; sourceTree = "<group>"; };
+		4202D51C2C4DDC1000223356 /* ConfigurationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
+		4202D5212C4DE08A00223356 /* ConfigurationServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +114,7 @@
 		4202D4BB2C4A485000223356 /* GoRaces */ = {
 			isa = PBXGroup;
 			children = (
+				4202D5172C4DDB0100223356 /* Info.plist */,
 				4202D5022C4B5AA200223356 /* Features */,
 				4202D4ED2C4A5D3B00223356 /* Models */,
 				4202D4E92C4A5AD000223356 /* Services */,
@@ -128,6 +138,7 @@
 		4202D4CC2C4A485100223356 /* GoRacesTests */ = {
 			isa = PBXGroup;
 			children = (
+				4202D5202C4DE05E00223356 /* Mocks */,
 				4202D4F52C4A6C2600223356 /* Models */,
 				4202D5142C4CA6CA00223356 /* Services */,
 			);
@@ -137,10 +148,11 @@
 		4202D4E92C4A5AD000223356 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4202D4FC2C4B56F000223356 /* ServicesAssembly.swift */,
 				4202D50A2C4B80C700223356 /* Mocks */,
 				4202D4EA2C4A5B1800223356 /* Protocols */,
 				4202D4F82C4A740B00223356 /* RaceQueryService.swift */,
-				4202D4FC2C4B56F000223356 /* ServicesAssembly.swift */,
+				4202D51C2C4DDC1000223356 /* ConfigurationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -149,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				4202D4EB2C4A5C1900223356 /* RaceQueryServiceProtocol.swift */,
+				4202D5182C4DDB3F00223356 /* ConfigurationServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -204,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				4202D50B2C4B80F100223356 /* RaceQueryServiceMock.swift */,
+				4202D51A2C4DDBBB00223356 /* ConfigurationServiceMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -214,6 +228,14 @@
 				4202D5152C4CA6F500223356 /* RaceQueryServiceTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		4202D5202C4DE05E00223356 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				4202D5212C4DE08A00223356 /* ConfigurationServiceMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,11 +354,14 @@
 				4202D50C2C4B80F100223356 /* RaceQueryServiceMock.swift in Sources */,
 				4202D4F02C4A65DD00223356 /* RacesDTO.swift in Sources */,
 				4202D5102C4CA58500223356 /* RaceFilterView.swift in Sources */,
+				4202D51D2C4DDC1000223356 /* ConfigurationService.swift in Sources */,
 				4202D4FF2C4B57FF00223356 /* ApplicationAssembly.swift in Sources */,
 				4202D4F22C4A683200223356 /* RaceModel.swift in Sources */,
+				4202D51B2C4DDBBB00223356 /* ConfigurationServiceMock.swift in Sources */,
 				4202D5012C4B58E200223356 /* DIResolver.swift in Sources */,
 				4202D4FD2C4B56F000223356 /* ServicesAssembly.swift in Sources */,
 				4202D4BD2C4A485000223356 /* GoRacesApp.swift in Sources */,
+				4202D5192C4DDB3F00223356 /* ConfigurationServiceProtocol.swift in Sources */,
 				4202D50E2C4B861600223356 /* RaceType+icon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4202D5222C4DE08A00223356 /* ConfigurationServiceMock.swift in Sources */,
 				4202D4F72C4A6C4C00223356 /* RaceModelTests.swift in Sources */,
 				4202D5162C4CA6F500223356 /* RaceQueryServiceTests.swift in Sources */,
 			);
@@ -491,6 +517,7 @@
 				DEVELOPMENT_TEAM = TQDS6MDQ3F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoRaces/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -522,6 +549,7 @@
 				DEVELOPMENT_TEAM = TQDS6MDQ3F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoRaces/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -43,3 +43,10 @@ Content-type: application/json
 - As discussed during our technical discussion, the minimum version is set to iOS 15 (iOS 15.5 to be precise)
 - there's no way to filter categories returned from the API. That's why the count has been increased to increase the chance we have 5 races per our categories of interests
 - For the same reason, filtering by categories is performed on the UI layer and not at the service layer
+- When retrieving races from API, the larger number of races is retrieved to increase the chances of races of all types are in the returned result set. 
+- More improvements can be made to the codebase, e.g.:
+    - Abstracting the networking layer
+    - Store more information from the API output to enable richer UI, e.g. navigation into race details. It was decided to follow BFF practice and save only the data needed for UI
+    - Swinject library is used to implement dependency injection. Obviously, it's not needed in the app of this size, but it is there to demonstrate the pattern
+    - As always, more unit tests could be added
+    

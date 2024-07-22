@@ -2,6 +2,7 @@ import XCTest
 @testable import GoRaces
 
 final class RaceQueryServiceTests: XCTestCase {
+    private var configurationService: ConfigurationServiceMock!
     private var service: RaceQueryService!
     
     func generateRaceModel(_ id: Int, raceType: RaceType) -> RaceModel {
@@ -9,7 +10,8 @@ final class RaceQueryServiceTests: XCTestCase {
     }
     
     override func setUpWithError() throws {
-        service = RaceQueryService()
+        configurationService = ConfigurationServiceMock()
+        service = RaceQueryService(_configurationService: ConfigurationServiceMock())
     }
 
     func testGivenNoFiltersDefinedsAndNegativeMaxSupplied_WhenFiltering_ThanAllRacesAreReturned() {

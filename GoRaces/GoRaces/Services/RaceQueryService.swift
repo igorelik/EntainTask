@@ -1,6 +1,12 @@
 import Foundation
 
 public class RaceQueryService: RaceQueryServiceProtocol {
+    private var _configurationService: ConfigurationServiceProtocol
+    
+    init(_configurationService: ConfigurationServiceProtocol) {
+        self._configurationService = _configurationService
+    }
+    
     private func fetchData<T: Decodable>(_ t: T.Type, for urlRequest: URLRequest) async throws -> T {
         do {
             let (data, httpResponse) = try await URLSession.shared.data(for: urlRequest)
@@ -41,8 +47,7 @@ public class RaceQueryService: RaceQueryServiceProtocol {
     }
     
     public func getRaces(for raceTypes: [RaceType], max: Int) async throws -> [RaceModel] {
-        // TODO: refactor to use config to build URL
-        let url = "https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=\(15*RaceType.allCases.count)"
+         let url = "\(_configurationService.BackendAPIURI)?method=nextraces&count=\(15*RaceType.allCases.count)"
         let data = try await fetchData(RacesDTO.self, for: URLRequest(url: URL(string: url)!))
         return filterRaces(races: data.data.raceSummaries.values
             .compactMap{ RaceModel(raceSummary: $0) }, raceTypes: raceTypes, max: max)
